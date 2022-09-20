@@ -1,13 +1,9 @@
 package com.example.demo.model.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import java.util.List;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 
 @Entity
 public class Category {
@@ -23,6 +19,7 @@ public class Category {
     public Category() {
 
     }
+
     public Long getCategoryId() {
         return categoryId;
     }
@@ -38,5 +35,5 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
-    
+
 }

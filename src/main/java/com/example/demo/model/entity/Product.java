@@ -25,6 +25,7 @@ public class Product {
         this.nameProduct = nameProduct;
         this.price = price;
     }
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable
     private List<Category> categoryList;
@@ -34,6 +35,7 @@ public class Product {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn
     private List<ProductParameter> productParameter;
+
     public Product() {
     }
 

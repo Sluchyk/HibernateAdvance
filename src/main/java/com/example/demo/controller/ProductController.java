@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
-    private  final ProductService productService;
+    private final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+
     @PostMapping("/save")
-    public Product save(@RequestBody Product product)
-    {
-        return  productService.save(product);
+    public Product save(@RequestBody Product product) {
+        return productService.save(product);
     }
+
     @GetMapping("/products")
-    public  Iterable<Product> getAll()
-    {
-        return  productService.findAll();
+    public Iterable<Product> getAll() {
+        return productService.findAll();
     }
 }

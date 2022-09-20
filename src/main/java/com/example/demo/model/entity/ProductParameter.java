@@ -24,6 +24,7 @@ public class ProductParameter {
         this.size = size;
         this.weight = weight;
     }
+
     public Long getProductParameterId() {
         return productParameterId;
     }
@@ -39,6 +40,7 @@ public class ProductParameter {
     public void setSize(int size) {
         this.size = size;
     }
+
     public int getWeight() {
         return weight;
     }
