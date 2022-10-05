@@ -1,6 +1,6 @@
 package com.example.demo.sevice;
 
-import com.example.demo.model.ProductRepository;
+import com.example.demo.model.repository.ProductRepository;
 import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.entity.ProductDescription;
@@ -21,22 +21,22 @@ public class ProductService {
 
     @PostConstruct
     void init() {
-        Product product = new Product("Table", new BigDecimal(1546));
-        Product product1 = new Product("chair", new BigDecimal(340));
+        Product productTable = new Product("Table", new BigDecimal(1546));
+        Product productChair = new Product("chair", new BigDecimal(340));
         ProductParameter productParameter = new ProductParameter(23, 40);
-        ProductParameter productParameter1 = new ProductParameter(15, 34);
-        Category category = new Category("Table");
-        Category category1 = new Category("Chair");
-        Category category2 = new Category("Furniture");
-        ProductDescription productDescription = new ProductDescription("color is brown,done with oak in Ukraine");
-        ProductDescription productDescription1 = new ProductDescription("color is white,done with nut tree in Poland");
-        product.setProductParameter(List.of(productParameter, productParameter1));
-        product1.setProductDescription(productDescription1);
-        product.setProductDescription(productDescription);
-        product1.setProductParameter(List.of(productParameter1));
-        product.setCategoryList(List.of(category, category2));
-        product1.setCategoryList(List.of(category1, category2));
-        productRepository.saveAll(List.of(product, product1));
+        ProductParameter productParameterOne = new ProductParameter(15, 34);
+        Category categoryTable = new Category("Table");
+        Category categoryChair = new Category("Chair");
+        Category categoryFurniture = new Category("Furniture");
+        ProductDescription productDescriptionColorBrown = new ProductDescription("color is brown,done with oak in Ukraine");
+        ProductDescription productDescriptionColorWhite = new ProductDescription("color is white,done with nut tree in Poland");
+        productTable.setProductParameter(List.of(productParameter, productParameterOne));
+        productChair.setProductDescription(productDescriptionColorWhite);
+        productTable.setProductDescription(productDescriptionColorBrown);
+        productChair.setProductParameter(List.of(productParameterOne));
+        productTable.setCategoryList(List.of(categoryTable, categoryFurniture));
+        productChair.setCategoryList(List.of(categoryChair, categoryFurniture));
+        productRepository.saveAll(List.of(productTable, productChair));
     }
 
 
